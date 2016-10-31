@@ -1,14 +1,16 @@
 <div class="student card">
-  <img class="card-img-top img-fluid" src="{{student.picture}}" alt="{{student.firstName}} {{student.lastName}}">
+  <img class="card-img-top img-fluid" src="{{student.picture}}" alt="{{student.id}}">
 
   <div class="student-content card-block">
     <h4 class="id card-title">{{student.id}}</h4>
+
     <div class="card-text">
       <div class="name">{{student.firstName}} {{student.lastName}}</div>
       <div class="street">{{student.street}} {{student.houseNumber}}</div>
       <div class="city">{{student.postcode}} {{student.city}}</div>
     </div>
   </div>
+
   <div class="card-footer">
     <button class="btn btn-primary">Details</button>
   </div>

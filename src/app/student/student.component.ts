@@ -4,7 +4,7 @@ import { Student } from '../shared/models/student';
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
-  styleUrls: ['./student.component.scss']
+  styleUrls: [ './student.component.scss' ]
 })
 export class StudentComponent implements OnInit {
   @Input()
@@ -18,3 +18,5 @@ export class StudentComponent implements OnInit {
   }
 
 }
+
+
