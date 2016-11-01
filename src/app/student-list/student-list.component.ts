@@ -14,8 +14,6 @@ export class StudentListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.studentService.getAll().subscribe();
-
     this.studentService
       .getStream()
       .subscribe(
