@@ -1,0 +1,101 @@
+<div class="modal fade" id="studentFormModal" tabindex="-1" role="dialog" aria-labelledby="studentFormModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form (submit)="add()" [formGroup]="form">
+        <div class="modal-header">
+          <h4 class="modal-title" id="studentFormModalLabel">Add Student</h4>
+        </div>
+
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="inputId">Id</label>
+                <input type="text" class="form-control" id="inputId" placeholder="Enter Id" aria-describedby="idHelp"
+                       formControlName="id">
+                <small id="idHelp" class="form-text text-muted">Die Id muss eindeutig sein</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputFirstname">Firstname</label>
+                <input type="text" class="form-control" id="inputFirstname" placeholder="Enter Firstname"
+                       formControlName="firstName">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inputLastname">Lastname</label>
+                <input type="text" class="form-control" id="inputLastname" placeholder="Enter Lastname"
+                       formControlName="lastName">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-10">
+              <div class="form-group">
+                <label for="inputStreet">Street</label>
+                <input type="text" class="form-control" id="inputStreet" placeholder="Enter Street"
+                       formControlName="street">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="inputHouseNumber">No.</label>
+                <input type="text" class="form-control" id="inputHouseNumber" placeholder="Enter House No."
+                       formControlName="houseNumber">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputPostcode">Postcode</label>
+                <input type="number" class="form-control" id="inputPostcode" placeholder="Enter Postcode"
+                       formControlName="postcode">
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="form-group">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="Enter City" formControlName="city">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="inputPicture">Picture</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputPicture"
+                  placeholder="Enter Picture"
+                  disabled="disabled"
+                  formControlName="picture">
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../shared/models/student';
+import { StudentService } from '../shared/services/student.service';
 
 @Component({
   selector: 'app-student-list',
@@ -9,52 +10,19 @@ import { Student } from '../shared/models/student';
 export class StudentListComponent implements OnInit {
   students: Student[];
 
-  constructor() {
+  constructor(private studentService: StudentService) {
   }
 
   ngOnInit() {
-    this.students = [
-      {
-        id: 's0555912',
-        picture: 'http://lorempixel.com/640/480/people/1',
-        firstName: 'Christoph',
-        lastName: 'Stach',
-        street: 'Plönzeile',
-        houseNumber: '21',
-        postcode: 12459,
-        city: 'Berlin'
-      },
-      {
-        id: 's0555782',
-        picture: 'http://lorempixel.com/640/480/people/2',
-        firstName: 'Miles',
-        lastName: 'Lorenz',
-        street: 'Tolle Straße',
-        houseNumber: '55',
-        postcode: 12459,
-        city: 'Berlin'
-      },
-      {
-        id: 's0555555',
-        picture: 'http://lorempixel.com/640/480/people/3',
-        firstName: 'Laura',
-        lastName: 'Hartgers',
-        street: 'Hollandstraße',
-        houseNumber: '15',
-        postcode: 12459,
-        city: 'Berlin'
-      },
-      {
-        id: 's0555444',
-        picture: 'http://lorempixel.com/640/480/people/4',
-        firstName: 'Steffen',
-        lastName: 'Exler',
-        street: 'Kreuzbergstraße',
-        houseNumber: '99',
-        postcode: 12459,
-        city: 'Berlin'
-      }
-    ];
+    this.studentService.getAll().subscribe();
+
+    this.studentService
+      .getStream()
+      .subscribe(
+        (students) => {this.students = students},
+        () => {},
+        () => {}
+      );
   }
 }
 

@@ -1,4 +1,4 @@
-<div class="student card">
+<div class="student card" *ngIf="student">
   <img class="card-img-top img-fluid" src="{{student.picture}}" alt="{{student.id}}">
 
   <div class="student-content card-block">
@@ -13,6 +13,7 @@
 
   <div class="card-footer">
     <button class="btn btn-primary">Details</button>
+    <button class="btn btn-error" (click)="delete()">Löschen</button>
   </div>
 </div>
 
